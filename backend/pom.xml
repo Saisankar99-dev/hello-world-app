@@ -11,7 +11,7 @@
     <name>Hello World Application</name>
 
     <properties>
-        <java.version>21</java.version> <!-- Update to Java 21 -->
+        <java.version>17</java.version> <!-- Update to Java 17 -->
         <spring-boot.version>2.7.8</spring-boot.version>
     </properties>
 
@@ -38,10 +38,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version> <!-- Use a version compatible with Java 21 -->
+                <version>3.11.0</version> <!-- Use a version compatible with Java 17 -->
                 <configuration>
-                    <source>${java.version}</source> <!-- Set to Java 21 -->
-                    <target>${java.version}</target> <!-- Set to Java 21 -->
+                    <source>${java.version}</source> <!-- Set to Java 17 -->
+                    <target>${java.version}</target> <!-- Set to Java 17 -->
                     <release>${java.version}</release> <!-- Optional: Use release flag for modern Java versions -->
                 </configuration>
             </plugin>
