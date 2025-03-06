@@ -11,7 +11,7 @@
     <name>Hello World Application</name>
 
     <properties>
-        <java.version>11</java.version> <!-- Update to Java 17 -->
+        <java.version>11</java.version>
         <spring-boot.version>2.7.8</spring-boot.version>
     </properties>
 
@@ -38,19 +38,25 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version> <!-- Use a version compatible with Java 17 -->
+                <version>3.11.0</version>
                 <configuration>
-                    <source>${java.version}</source> <!-- Set to Java 17 -->
-                    <target>${java.version}</target> <!-- Set to Java 17 -->
-                    <release>${java.version}</release> <!-- Optional: Use release flag for modern Java versions -->
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
-            <!-- Spring Boot Maven Plugin -->
+            <!-- Spring Boot Maven Plugin (Ensures executable JAR) -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>  <!-- Ensures MANIFEST.MF contains Main-Class -->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
